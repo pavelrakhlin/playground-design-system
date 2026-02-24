@@ -1,0 +1,27 @@
+// SYSTEM-MANAGED FILE — FEEL FREE TO TWEAK, BUT CHANGES MAY BE OVERWRITTEN.
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "maxNodeModuleJsDepth": 0,
+    "checkJs": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": [
+      "./.modmesh/node_modules/vite/client"
+    ],
+    "paths": {
+      "*": [
+        "./.modmesh/node_modules/@types/*",
+        "./.modmesh/node_modules/*"
+      ]
+    }
+  },
+  "exclude": [
+    "public",
+    "dist"
+  ]
+}

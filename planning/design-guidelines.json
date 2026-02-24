@@ -1,0 +1,107 @@
+{
+  "designSystem": {
+    "concept": "Soft Modern & Approachable Neumorphism",
+    "description": "A clean, highly rounded, and accessible interface that balances utility with a friendly aesthetic. It relies on soft shadows for elevation, pill-shaped interactive elements, and high-contrast dual-tone surfaces to guide user focus.",
+    "typography": {
+      "headingFont": {
+        "family": "Geist Mono",
+        "source": "Google Fonts",
+        "category": "Monospace",
+        "weights": [400, 600, 700],
+        "usage": "Used for primary page titles, hero sections, modal headers, and editorial-style emphasis to add a touch of elegance and hierarchy."
+      },
+      "bodyFont": {
+        "family": "Plus Jakarta Sans",
+        "source": "Google Fonts",
+        "category": "Sans-serif",
+        "weights": [400, 500, 600, 700],
+        "usage": "The workhorse font for all UI copy, paragraphs, button labels, inputs, and data display. Chosen for its geometric clarity and excellent legibility at small sizes."
+      }
+    },
+    "colors": {
+      "background": {
+        "app": "#F5F3F1",
+        "surfacePrimary": "#FFFFFF",
+        "surfaceInverted": "#2F2D2C",
+        "surfaceHover": "#F9F8F7",
+        "surfaceElevated": "#FFFFFF"
+      },
+      "text": {
+        "primary": "#1C1A19",
+        "secondary": "#716C6A",
+        "inverted": "#FFFFFF",
+        "disabled": "#A8A3A0"
+      },
+      "border": {
+        "subtle": "#E8E4E1",
+        "divider": "#F5F3F1"
+      },
+      "status": {
+        "success": "#10B981",
+        "loading": "#A8A3A0",
+        "error": "#EF4444",
+        "warning": "#F59E0B"
+      },
+      "accents": {
+        "mention": "#E8E4E1"
+      }
+    },
+    "shape": {
+      "borderRadius": {
+        "sm": "8px",
+        "md": "12px",
+        "lg": "24px",
+        "xl": "32px",
+        "pill": "9999px",
+        "circular": "50%"
+      }
+    },
+    "elevation": {
+      "shadows": {
+        "flat": "none",
+        "sm": "0 2px 8px rgba(0, 0, 0, 0.04)",
+        "md": "0 8px 24px rgba(0, 0, 0, 0.08)",
+        "lg": "0 12px 32px rgba(0, 0, 0, 0.12)"
+      }
+    },
+    "components": {
+      "toolbars": {
+        "top": {
+          "background": "White",
+          "style": "Integrated smoothly into the top of the container, separated only by subtle spacing or a highly transparent 1px divider.",
+          "elements": "Contains pill-shaped dropdowns and icon buttons."
+        },
+        "bottomAction": {
+          "background": "Dark Charcoal (#2C3338)",
+          "style": "A floating or docked dark container contrasting sharply with the main white surface. Highly rounded corners (pill shape).",
+          "elements": "Circular icon buttons (white/light gray) evenly spaced."
+        }
+      },
+      "buttons": {
+        "primary": "Pill-shaped, dark charcoal background with white text. Hover states shift to a slightly lighter gray.",
+        "secondary": "Pill-shaped or rounded rectangle, light gray background with dark text.",
+        "icon": "Perfectly circular when in dark containers, or square with soft rounded corners (8px-12px) in light toolbars. Active states in light toolbars use a white background with a soft drop shadow (raised elevation).",
+        "dropdown": "Pill-shaped with a soft gray background, featuring text alongside a subtle chevron."
+      },
+      "inputs": {
+        "text": "Borderless appearance within the main white surface, relying on the container for structure. Generous padding (16px+).",
+        "mentions": "Inline pill shape with a light gray background (#E5E7EB) and slightly bolder text to stand out from regular paragraph text.",
+        "forms": "Standard form fields should use a soft gray background (#F3F4F6) with no border, adding a subtle border or shadow only on focus."
+      },
+      "attachments": {
+        "style": "Square with rounded corners (12px). Features a soft drop shadow.",
+        "statusIndicators": "Overlapping circular badges at the top right corner. E.g., a green circle with a white checkmark for success, or a white circle with a gray spinner for loading. These badges must have a 2px white border to separate them visually from the thumbnail."
+      },
+      "cards": {
+        "container": "Stark white background, large border radius (24px to 32px), subtle 'raised' shadow against the main app background to create depth."
+      },
+      "modals": {
+        "style": "White background, large border radius (24px), deep 'dropdown' shadow. Must include a dark overlay backdrop (e.g., black at 40% opacity)."
+      },
+      "navigation": {
+        "sidebar": "Light gray background matching the app body, with pill-shaped active states for navigation items.",
+        "tabs": "Soft pill-shaped indicators that slide behind the active text, avoiding harsh underlines."
+      }
+    }
+  }
+}

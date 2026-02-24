@@ -385,7 +385,7 @@ export function DesignSystem() {
             <h2 className="ds-section-title">Navigation</h2>
             <span className="ds-section-tag">Sidebar + Tabs</span>
           </div>
-          <div className="ds-demo-grid ds-demo-grid-2" style={{ width: "100%", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
+          <div className="ds-demo-grid ds-demo-grid-2">
 
             <div className="ds-demo-card" style={{ display: "flex", gap: 24 }}>
               <nav className="ds-sidebar" aria-label="App navigation">

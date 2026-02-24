@@ -166,7 +166,7 @@
   width: 100%;
 }
 
-.ds-demo-grid-2 { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.ds-demo-grid-2 { grid-template-columns: 1fr; gap: 40px; }
 .ds-demo-grid-3 { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
 .ds-demo-grid-4 { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
 

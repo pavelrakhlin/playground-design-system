@@ -18,6 +18,16 @@ const NAV_ITEMS: { id: string; icon: IconName; label: string }[] = [
   { id: "settings", icon: "settings", label: "Settings" },
 ];
 
+const ICON_ANIM_MAP: Partial<Record<string, string>> = {
+  settings:        "icon-spin",
+  copy:            "icon-pop",
+  inbox:           "icon-bounce",
+  "bar-chart":     "icon-bar-grow",
+  star:            "icon-pop",
+  trash:           "icon-shake",
+  "chevron-down":  "icon-bob",
+};
+
 const TABLE_ROWS = [
   { name: "Apollo Design System", status: "Active", owner: "AK", progress: 78, type: "Design" },
   { name: "Data Pipeline v2", status: "In Review", owner: "BM", progress: 45, type: "Engineering" },
@@ -97,7 +107,7 @@ export function DesignSystem() {
               ].map((iconName) => (
                 <div key={iconName} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
                   <div style={{ color: "var(--ds-color-text-primary)" }}>
-                    <Icon name={iconName as IconName} size={24} />
+                    <Icon name={iconName as IconName} size={24} className={ICON_ANIM_MAP[iconName] ?? ""} />
                   </div>
                   <span className="ds-type-caption" style={{ margin: 0, textAlign: "center" }}>{iconName}</span>
                 </div>
@@ -110,28 +120,28 @@ export function DesignSystem() {
         <section className="ds-section" aria-label="Typography">
           <div className="ds-section-header">
             <h2 className="ds-section-title">Typography</h2>
-            <span className="ds-section-tag">Geist Mono + Plus Jakarta Sans</span>
+            <span className="ds-section-tag">Playfair Display + Plus Jakarta Sans</span>
           </div>
           <div className="ds-demo-card">
             <div className="ds-type-row">
               <div className="ds-type-specimen ds-type-display">The quick brown fox</div>
-              <span className="ds-type-spec">Display · Geist Mono 700 · 56px</span>
+              <span className="ds-type-spec">Display · Playfair Display 700 · 56px</span>
             </div>
             <div className="ds-type-row">
               <div className="ds-type-specimen ds-type-h1">Heading One — Primary Title</div>
-              <span className="ds-type-spec">H1 · Geist Mono 700 · 36px</span>
+              <span className="ds-type-spec">H1 · Playfair Display 700 · 36px</span>
             </div>
             <div className="ds-type-row">
               <div className="ds-type-specimen ds-type-h2">Heading Two — Section Title</div>
-              <span className="ds-type-spec">H2 · Geist Mono 600 · 28px</span>
+              <span className="ds-type-spec">H2 · Playfair Display 600 · 28px</span>
             </div>
             <div className="ds-type-row">
               <div className="ds-type-specimen ds-type-h3">Heading Three — Subsection</div>
-              <span className="ds-type-spec">H3 · Geist Mono 600 · 22px</span>
+              <span className="ds-type-spec">H3 · Playfair Display 600 · 22px</span>
             </div>
             <div className="ds-type-row">
               <div className="ds-type-specimen ds-type-italic">An elegant italic headline in Geist Mono</div>
-              <span className="ds-type-spec">Italic · Geist Mono 400i · 22px</span>
+              <span className="ds-type-spec">Italic · Playfair Display 400i · 22px</span>
             </div>
             <div className="ds-type-row">
               <div className="ds-type-specimen ds-type-h4">Heading Four — Component Heading</div>
@@ -249,9 +259,9 @@ export function DesignSystem() {
           <div className="ds-demo-card" style={{ marginBottom: 16 }}>
             <p className="ds-subsection-title">Dropdown &amp; Pill</p>
             <div className="ds-demo-row">
-              <button className="ds-btn ds-btn-dropdown">Regular Font <span className="ds-chevron"><Icon name="chevron-down" size={12} /></span></button>
-              <button className="ds-btn ds-btn-dropdown">Sort by: Recent <span className="ds-chevron"><Icon name="chevron-down" size={12} /></span></button>
-              <button className="ds-btn ds-btn-dropdown">All Projects <span className="ds-chevron"><Icon name="chevron-down" size={12} /></span></button>
+              <button className="ds-btn ds-btn-dropdown">Regular Font <span className="ds-chevron"><Icon name="chevron-down" size={12} className="icon-bob" /></span></button>
+              <button className="ds-btn ds-btn-dropdown">Sort by: Recent <span className="ds-chevron"><Icon name="chevron-down" size={12} className="icon-bob" /></span></button>
+              <button className="ds-btn ds-btn-dropdown">All Projects <span className="ds-chevron"><Icon name="chevron-down" size={12} className="icon-bob" /></span></button>
             </div>
           </div>
 
@@ -266,7 +276,7 @@ export function DesignSystem() {
               <div style={{ width: 1, height: 24, background: "var(--ds-color-border-subtle)", margin: "0 4px" }} />
               {["list", "bar-chart"].map((icon, i) => (
                 <button key={i} className="ds-btn ds-btn-icon" aria-label={icon}>
-                  <Icon name={icon as IconName} />
+                  <Icon name={icon as IconName} className={ICON_ANIM_MAP[icon] ?? ""} />
                 </button>
               ))}
             </div>
@@ -396,7 +406,7 @@ export function DesignSystem() {
                     onClick={() => setActiveNav(item.id)}
                     aria-current={activeNav === item.id ? "page" : undefined}
                   >
-                    <span className="ds-nav-icon"><Icon name={item.icon} size={16} /></span>
+                    <span className="ds-nav-icon"><Icon name={item.icon} size={16} className={ICON_ANIM_MAP[item.icon] ?? ""} /></span>
                     {item.label}
                   </button>
                 ))}
@@ -453,7 +463,7 @@ export function DesignSystem() {
           <div className="ds-demo-card" style={{ marginBottom: 16 }}>
             <p className="ds-subsection-title">Top Formatting Toolbar</p>
             <div className="ds-toolbar-top" role="toolbar" aria-label="Text formatting">
-              <button className="ds-btn ds-btn-dropdown" style={{ fontSize: 13 }}>Regular Font <span className="ds-chevron"><Icon name="chevron-down" size={12} /></span></button>
+              <button className="ds-btn ds-btn-dropdown" style={{ fontSize: 13 }}>Regular Font <span className="ds-chevron"><Icon name="chevron-down" size={12} className="icon-bob" /></span></button>
               <div className="ds-toolbar-divider" />
               {["bold", "italic", "strikethrough", "underline", "code"].map((icon, i) => (
                 <button key={i} className={`ds-btn ds-btn-icon ${i === 0 ? "ds-btn-icon-active" : ""}`} aria-label={icon}>
@@ -463,7 +473,7 @@ export function DesignSystem() {
               <div className="ds-toolbar-divider" />
               {["list", "bar-chart"].map((icon, i) => (
                 <button key={i} className="ds-btn ds-btn-icon" aria-label={icon}>
-                  <Icon name={icon as IconName} />
+                  <Icon name={icon as IconName} className={ICON_ANIM_MAP[icon] ?? ""} />
                 </button>
               ))}
             </div>
@@ -517,7 +527,7 @@ export function DesignSystem() {
                 <p className="ds-stat-label">{["Total Projects", "Team Members", "Deliverables"][i]}</p>
                 <p className="ds-stat-value">{["24", "8", "142"][i]}</p>
                 <span className="ds-stat-delta" style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
-                  <Icon name="bar-chart" size={12} /> {["12% this week", "2 added", "18 this month"][i]}
+                  <Icon name="bar-chart" size={12} className="icon-bar-grow" /> {["12% this week", "2 added", "18 this month"][i]}
                 </span>
               </div>
             ))}
@@ -703,7 +713,7 @@ export function DesignSystem() {
                   ].map((item) => (
                     <button key={item.label} className="ds-dropdown-item" role="menuitem">
                       <span className="ds-dropdown-item-icon">
-                        <Icon name={item.icon as IconName} size={15} />
+                        <Icon name={item.icon as IconName} size={15} className={ICON_ANIM_MAP[item.icon] ?? ""} />
                       </span>
                       {item.label}
                     </button>
@@ -711,7 +721,7 @@ export function DesignSystem() {
                   <div className="ds-dropdown-separator" role="separator" />
                   <button className="ds-dropdown-item ds-dropdown-item-danger" role="menuitem">
                     <span className="ds-dropdown-item-icon">
-                      <Icon name="trash" size={15} />
+                      <Icon name="trash" size={15} className="icon-shake" />
                     </span>
                     Delete Project
                   </button>

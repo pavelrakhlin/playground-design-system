@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 /* ─────────────────────────────────────────────────
    DESIGN TOKENS (scoped to this page only)
 ───────────────────────────────────────────────── */
 .ds-page {
-  --ds-font-heading: 'Geist Mono', ui-monospace, monospace;
+  --ds-font-heading: 'Playfair Display', Georgia, serif;
   --ds-font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
 
   --ds-color-bg-app: #F5F3F1;
@@ -827,6 +827,17 @@
   width: 20px;
   text-align: center;
   flex-shrink: 0;
+}
+
+@keyframes ds-icon-shimmer {
+  0%        { filter: brightness(1); }
+  28%       { filter: brightness(1.9); }
+  56%       { filter: brightness(1); }
+  100%      { filter: brightness(1); }
+}
+
+.ds-nav-item:hover .ds-nav-icon svg {
+  animation: ds-icon-shimmer 2s ease-in-out infinite;
 }
 
 /* Tabs */
